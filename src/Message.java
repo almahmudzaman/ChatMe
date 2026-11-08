@@ -3,22 +3,20 @@ import java.time.format.DateTimeFormatter;
 public class Message
 {
 
-    private String sender;
+    private User sender;
     private String content;
-    private String recipient;
-    private String timestamp;
+    private User recipient;
+    private LocalDateTime timestamp;
 
-    public Message(String sender, String content, String recipient)
+    public Message(User sender, String content, User recipient)
     {
         this.sender = sender;
         this.content = content;
         this.recipient = recipient;
-
-        DateTimeFormatter f = DateTimeFormatter.ofPattern("hh:mm a; dd MMMM yyyy");
-        this.timestamp = LocalDateTime.now().format(f);
+        this.timestamp = LocalDateTime.now();
     }
 
-    public String getSender()
+    public User getSender()
     {
         return sender;
     }
@@ -30,8 +28,14 @@ public class Message
 
     public void display()
     {
-        System.out.println(sender + ": "+ "(" + recipient + ") " + content + "\n" + timestamp);
-        
+      /*   System.out.println(sender + ": "+ "(" + recipient + ") " + content + "\n" + timestamp);
+        */
+
+      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm a, dd MMMM yyyy");
+
+      System.out.println(sender.getUsername() + " -> " + recipient.getUsername() + ": " + content);
+      System.out.println(timestamp.format(formatter));
+
     }
 
 }

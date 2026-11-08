@@ -1,3 +1,35 @@
+/*import java.util.ArrayList;
+
+public class ChatApp
+{
+    public static void main(String[] args)
+    {
+        ArrayList<Message> messages = new ArrayList<>();
+
+        messages.add(new Message("Mahi","Ki koro?"));
+        messages.add(new Message("Joti","Portechi, tumi ki koro?"));
+        messages.add(new Message("Mahi","kisu na, rater khabar khabo. Klk asbe?"));
+        messages.add(new Message("Joti","Pore jabo. Tumi to jaba, tai na?"));
+        messages.add(new Message("Mahi","Ha, ami jabo. Sir jaheto jete bolse."));
+        messages.add(new Message("Joti","A kota to vulai gashilam."));
+    
+        for (Message message : messages)
+        {
+            message.display();
+        }
+
+        int MC = messages.size();
+        System.out.println("Total Messages: " + MC);
+
+        for ( Message message : messages)
+        {
+            if(message.getSender().equals("Mahi"))
+            {
+                message.display();
+            }
+        }
+    }
+}
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -107,5 +139,55 @@ public class ChatApp
             }
         }
         scanner.close();
+    }
+}
+    */
+
+public class ChatApp {
+
+    public static void main(String[] args) {
+
+        User alex = new User("alex", "alex@gamil.com");
+        User sam = new User("sam","sam@gamil.com");
+        User zams = new User("Zams","zams@yahoo.com");
+
+        Conversation conversation1 =
+                new Conversation(alex, sam);
+        Conversation conversation2 =
+                new Conversation(zams, sam);
+
+        conversation1.sendMessage(
+                alex,
+                "Hello Sam!"
+        );
+
+        conversation1.sendMessage(
+                sam,
+                "Hi Alex!"
+        );
+
+        conversation1.sendMessage(
+                alex,
+                "How are you?"
+        );
+
+        conversation2.sendMessage(zams, "Kmn aso?");
+        conversation2.sendMessage(sam, "Valo.");
+
+        conversation1.displayParticipants();
+        sam.display();
+        alex.display();
+        conversation1.displayConversation();
+        System.out.println(
+            "Messages: " + conversation1.getMessageCount()
+        );
+
+        System.out.println(
+            "=================== =============================" );
+        conversation2.displayParticipants();
+        conversation2.displayConversation();
+        System.out.println(
+            "Messages: " + conversation2.getMessageCount()
+        );
     }
 }
