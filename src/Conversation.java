@@ -62,9 +62,9 @@ public class Conversation
 
         System.out.println("\n======= Conversation ========");
 
-        for(Message messages: messages)
+        for(Message message: messages)
         {
-            messages.display();
+            message.display();
         }
     }
 

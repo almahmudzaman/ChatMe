@@ -1,13 +1,7 @@
 import java.util.ArrayList;
 
 public class ConversationManager {
-    
-    /*
-        3. Start a conversation
-        4. Select a conversation
-        5. Send messages
-        6. View conversations
-    */
+
 
     private ArrayList<Conversation> conversations;
 
@@ -15,10 +9,16 @@ public class ConversationManager {
     {
         conversations = new ArrayList<>();
     }
-    public void createConversation(User user1, User user2)
+    public boolean createConversation(User user1, User user2)
     {
+        if(findConversation(user1, user2) != null)
+        {
+            return false;
+        }
+
         Conversation conversation = new Conversation(user1, user2);
         conversations.add(conversation);
+        return true;
     }
 
     public int getConversationCount()

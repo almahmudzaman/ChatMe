@@ -28,9 +28,7 @@ public class Message
 
     public void display()
     {
-      /*   System.out.println(sender + ": "+ "(" + recipient + ") " + content + "\n" + timestamp);
-        */
-
+ 
       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm a, dd MMMM yyyy");
 
       System.out.println(sender.getUsername() + " -> " + recipient.getUsername() + ": " + content);

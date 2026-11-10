@@ -8,10 +8,7 @@ public class UserManager
     {
         users = new HashMap<>();
     }
-        /*
-        1. Register
-        2. Find another user
-        */
+
 
     public boolean registerUser(User user)
     {
