@@ -14,6 +14,16 @@ public class Conversation
 
         messages = new ArrayList<>();
     }
+
+    public User getUser1()
+    {
+        return u1;
+    }
+
+    public User getUser2()
+    {
+        return u2;
+    }
     
     public void sendMessage(User sender, String content)
     {
